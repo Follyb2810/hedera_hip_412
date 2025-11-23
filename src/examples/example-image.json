@@ -1,0 +1,16 @@
+{
+  "name": "Example NFT 001",
+  "creator": "Jane Doe",
+  "description": "A sample collectible",
+  "image": "ipfs://bafybeicidexampleimagecid/preview.png",
+  "checksum": "9defbb6402d4bf39f2ea580099c73194647b24a659b6f6b778e3dd71755b8862",
+  "type": "image/png",
+  "format": "HIP412@2.0.0",
+  "files": [
+    {
+      "uri": "ipfs://bafybeicidexampleimagecid/highres.png",
+      "type": "image/png",
+      "is_default_file": true
+    }
+  ]
+}

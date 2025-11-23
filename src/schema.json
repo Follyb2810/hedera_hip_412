@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "version": "2.0.0",
+  "additionalProperties": false,
+  "properties": {
+    "name": { "type": "string" },
+    "creator": { "type": "string" },
+    "creatorDID": { "type": "string", "format": "uri" },
+    "description": { "type": "string" },
+    "image": { "type": "string", "format": "uri" },
+    "checksum": { "type": "string" },
+    "type": { "type": "string" },
+    "format": { "type": "string", "default": "HIP412@2.0.0" },
+    "properties": { "type": "object" },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uri": { "type": "string", "format": "uri" },
+          "checksum": { "type": "string" },
+          "type": { "type": "string" },
+          "is_default_file": { "type": "boolean" },
+          "metadata": { "type": "object" },
+          "metadata_uri": { "type": "string", "format": "uri" }
+        },
+        "required": ["uri", "type"],
+        "additionalProperties": false
+      }
+    },
+    "attributes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "trait_type": { "type": "string" },
+          "display_type": { "type": "string" },
+          "value": { "type": ["string", "integer", "number", "boolean"] },
+          "max_value": { "type": ["string", "integer", "number"] }
+        },
+        "required": ["trait_type", "value"],
+        "additionalProperties": false
+      }
+    },
+    "localization": {
+      "type": "object",
+      "required": ["uri", "default", "locales"],
+      "properties": {
+        "uri": { "type": "string" },
+        "default": { "type": "string" },
+        "locales": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["name", "image", "type"]
+}
